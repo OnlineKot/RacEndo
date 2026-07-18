@@ -26,6 +26,23 @@ faqItems.forEach((item) => {
   });
 });
 
+const reviews = document.getElementById("reviews");
+const revPrev = document.getElementById("revPrev");
+const revNext = document.getElementById("revNext");
+
+if (reviews && revPrev && revNext) {
+  const step = () => {
+    const card = reviews.querySelector(".review");
+    return card ? card.offsetWidth + 20 : 360;
+  };
+  revPrev.addEventListener("click", () => {
+    reviews.scrollBy({ left: -step(), behavior: "smooth" });
+  });
+  revNext.addEventListener("click", () => {
+    reviews.scrollBy({ left: step(), behavior: "smooth" });
+  });
+}
+
 const callbar = document.getElementById("callbar");
 const progressBar = document.getElementById("scrollProgress");
 let ticking = false;
