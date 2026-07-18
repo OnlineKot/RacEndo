@@ -26,41 +26,6 @@ faqItems.forEach((item) => {
   });
 });
 
-const googleRating = {
-  value: 4.6,
-  apiKey: "",
-  placeId: "",
-};
-
-function renderRating(value) {
-  const clamped = Math.max(0, Math.min(5, value));
-  const formatted = clamped.toLocaleString("pl-PL", {
-    minimumFractionDigits: 1,
-    maximumFractionDigits: 1,
-  });
-  document.querySelectorAll("[data-rating-value]").forEach((el) => {
-    el.textContent = formatted;
-  });
-  document.querySelectorAll("[data-rating-fill]").forEach((el) => {
-    el.style.width = `${(clamped / 5) * 100}%`;
-  });
-}
-
-renderRating(googleRating.value);
-
-if (googleRating.apiKey && googleRating.placeId) {
-  fetch(
-    `https://places.googleapis.com/v1/places/${googleRating.placeId}?fields=rating&key=${googleRating.apiKey}`
-  )
-    .then((response) => (response.ok ? response.json() : null))
-    .then((data) => {
-      if (data && typeof data.rating === "number") {
-        renderRating(data.rating);
-      }
-    })
-    .catch(() => {});
-}
-
 const reviews = document.getElementById("reviews");
 const revPrev = document.getElementById("revPrev");
 const revNext = document.getElementById("revNext");

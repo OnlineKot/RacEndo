@@ -146,24 +146,36 @@ a {
   font-weight: 500;
 }
 
-.topbar-contact {
+.topbar-actions {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-.topbar-contact a {
+.tb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.32rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
   color: #fff;
   font-weight: 600;
+  font-size: 0.85rem;
   text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s;
 }
 
-.topbar-contact a:hover {
-  text-decoration: underline;
+.tb-btn:hover {
+  background: rgba(255, 255, 255, 0.24);
 }
 
-.topbar-contact span {
-  opacity: 0.5;
+.tb-btn svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
 }
 
 .site-header {
@@ -367,48 +379,6 @@ a {
 
 .hero-review-link a:hover {
   border-bottom-color: var(--accent);
-}
-
-.rating-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.7rem;
-  margin-top: 1.2rem;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 0.55rem 1.2rem;
-  box-shadow: 0 6px 18px rgba(16, 32, 58, 0.07);
-}
-
-.rating-value {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.25rem;
-  color: var(--ink);
-}
-
-.stars {
-  position: relative;
-  display: inline-block;
-  color: #d9e2ec;
-  font-size: 1.15rem;
-  letter-spacing: 3px;
-  line-height: 1;
-}
-
-.stars-fill {
-  position: absolute;
-  left: 0;
-  top: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  color: #f6a725;
-}
-
-.rating-note {
-  font-size: 0.88rem;
-  color: var(--ink-soft);
 }
 
 .reviews-wrap {
@@ -1016,6 +986,14 @@ details p {
 }
 
 @media (max-width: 640px) {
+  .topbar-title {
+    display: none;
+  }
+
+  .topbar-inner {
+    justify-content: center;
+  }
+
   .nav-toggle {
     display: flex;
   }
