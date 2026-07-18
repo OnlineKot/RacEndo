@@ -102,14 +102,14 @@ const journeyInner = document.getElementById("toothJourneyInner");
 const progressBar = document.getElementById("scrollProgress");
 
 const journeyStops = [
-  { sel: ".hero", x: 0.74, y: 0.7, s: 0.5, o: 0.9 },
+  { sel: ".hero", x: 0.5, y: 0.82, s: 0.62, o: 1 },
   { sel: ".trustbar", x: 0.9, y: 0.42, s: 0.38, o: 0.85 },
   { sel: "#uslugi", x: 0.945, y: 0.46, s: 0.3, o: 0.45 },
   { sel: "#liczby", x: 0.175, y: 0.4, s: 1.15, o: 1 },
   { sel: "#mikroskop", x: 0.955, y: 0.42, s: 0.34, o: 0.8 },
   { sel: "#lekarz", x: 0.945, y: 0.46, s: 0.3, o: 0.45 },
   { sel: "#faq", x: 0.11, y: 0.42, s: 0.62, o: 0.95 },
-  { sel: "#kontakt", x: 0.945, y: 0.46, s: 0.32, o: 0.5 },
+  { sel: "#kontakt", x: 0.97, y: 0.5, s: 0.26, o: 0.45 },
   { sel: ".cta-band", x: 0.78, y: 0.6, s: 0.5, o: 0.95 },
 ];
 
@@ -190,7 +190,7 @@ function frame() {
     if (state) {
       const rotZ = Math.sin(currentY * 0.0012) * 12;
       const rotY = Math.sin(currentY * 0.0016) * 42;
-      journey.style.transform = `translate3d(${(state.x - 100).toFixed(1)}px, ${(state.y - 115).toFixed(1)}px, 0) rotate(${rotZ.toFixed(2)}deg) scale(${state.s.toFixed(3)})`;
+      journey.style.transform = `translate3d(${(state.x - 100).toFixed(1)}px, ${(state.y - 148).toFixed(1)}px, 0) rotate(${rotZ.toFixed(2)}deg) scale(${state.s.toFixed(3)})`;
       journey.style.opacity = state.o.toFixed(3);
       journeyInner.style.transform = `perspective(800px) rotateY(${rotY.toFixed(2)}deg)`;
     }

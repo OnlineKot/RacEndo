@@ -124,48 +124,14 @@
 </script>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <linearGradient id="toothBody" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ffffff"/>
-      <stop offset="0.42" stop-color="#eef3f4"/>
-      <stop offset="0.66" stop-color="#dde7e9"/>
-      <stop offset="0.82" stop-color="#e2dbc9"/>
-      <stop offset="1" stop-color="#d5cbb2"/>
-    </linearGradient>
-    <linearGradient id="toothSide" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0.45" stop-color="#3b5458" stop-opacity="0"/>
-      <stop offset="1" stop-color="#3b5458" stop-opacity="0.30"/>
-    </linearGradient>
-    <radialGradient id="toothLight" cx="0.30" cy="0.22" r="0.55">
-      <stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/>
-      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="toothAO" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#6b5a36" stop-opacity="0.30"/>
-      <stop offset="1" stop-color="#6b5a36" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="toothSpec" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
-      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-</svg>
-
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <div class="tooth-journey" id="toothJourney" aria-hidden="true">
   <div class="tooth-journey-inner" id="toothJourneyInner">
-    <svg viewBox="0 0 220 240" class="tooth-svg">
-      <path d="M110 26 C88 26 70 30 58 44 C46 58 42 76 44 96 C45.5 112 52 122 56 134 C61 150 60 172 68 188 C73 198 84 200 88 190 C93 178 90 160 100 152 C106 147 114 147 120 152 C130 160 127 178 132 190 C136 200 147 198 152 188 C160 172 159 150 164 134 C168 122 174.5 112 176 96 C178 76 174 58 162 44 C150 30 132 26 110 26 Z" fill="url(#toothBody)"/>
-      <path d="M110 26 C88 26 70 30 58 44 C46 58 42 76 44 96 C45.5 112 52 122 56 134 C61 150 60 172 68 188 C73 198 84 200 88 190 C93 178 90 160 100 152 C106 147 114 147 120 152 C130 160 127 178 132 190 C136 200 147 198 152 188 C160 172 159 150 164 134 C168 122 174.5 112 176 96 C178 76 174 58 162 44 C150 30 132 26 110 26 Z" fill="url(#toothSide)"/>
-      <ellipse cx="110" cy="162" rx="26" ry="34" fill="url(#toothAO)"/>
-      <ellipse cx="74" cy="68" rx="32" ry="44" fill="url(#toothLight)"/>
-      <path d="M60 116 C84 128 136 128 160 116" stroke="#9b8c6a" stroke-opacity="0.26" stroke-width="4" fill="none" stroke-linecap="round"/>
-      <path d="M84 50 C98 58 122 58 136 50" stroke="#7c979c" stroke-opacity="0.18" stroke-width="4" fill="none" stroke-linecap="round"/>
-      <ellipse cx="80" cy="62" rx="14" ry="22" fill="url(#toothSpec)" transform="rotate(-18 80 62)"/>
-      <ellipse cx="99" cy="40" rx="8" ry="4" fill="#ffffff" opacity="0.75"/>
-    </svg>
+    <picture>
+      <source srcset="assets/tooth.webp" type="image/webp">
+      <img src="assets/tooth.png" alt="" class="tooth-img" width="900" height="1335">
+    </picture>
   </div>
 </div>
 
@@ -193,32 +159,21 @@
 
 <main>
 <section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <p class="eyebrow reveal">Jedyny w&nbsp;Raciborzu specjalista stomatologii zachowawczej i&nbsp;endodoncji</p>
-      <h1 class="reveal">Leczenie zębów bez bólu i&nbsp;bez stresu</h1>
-      <p class="lead reveal">Ratujemy zęby leczeniem kanałowym pod mikroskopem, a&nbsp;znieczulenie komputerowe sprawia, że nawet podanie znieczulenia jest bezbolesne.</p>
-      <div class="hero-actions reveal">
-        <a href="tel:+48511931049" class="btn btn-primary btn-lg">Umów wizytę: 511 931 049</a>
-        <a href="#uslugi" class="btn btn-ghost btn-lg">Zobacz usługi</a>
-      </div>
-      <ul class="hero-badges reveal">
-        <li>Jedyny taki specjalista w&nbsp;mieście</li>
-        <li>Mikroskop zabiegowy</li>
-        <li>RTG cyfrowy na miejscu</li>
-      </ul>
+  <div class="hero-horizon" aria-hidden="true"></div>
+  <div class="container hero-stage">
+    <p class="eyebrow reveal">Jedyny w&nbsp;Raciborzu specjalista stomatologii zachowawczej i&nbsp;endodoncji</p>
+    <h1 class="reveal">Leczenie zębów bez bólu i&nbsp;bez stresu</h1>
+    <p class="lead reveal">Ratujemy zęby leczeniem kanałowym pod mikroskopem, a&nbsp;znieczulenie komputerowe sprawia, że nawet podanie znieczulenia jest bezbolesne.</p>
+    <div class="hero-actions reveal">
+      <a href="tel:+48511931049" class="btn btn-primary btn-lg">Umów wizytę: 511 931 049</a>
+      <a href="#uslugi" class="btn btn-ghost btn-lg">Rozpocznij wizytę na stronie</a>
     </div>
-    <div class="hero-panel" data-plx="-0.06">
-      <h2>Godziny przyjęć</h2>
-      <dl class="hours">
-        <div><dt>Poniedziałek</dt><dd>12:00 – 18:00</dd></div>
-        <div class="closed"><dt>Wtorek</dt><dd>nieczynne</dd></div>
-        <div><dt>Środa</dt><dd>12:00 – 19:00</dd></div>
-        <div class="closed"><dt>Czwartek</dt><dd>nieczynne</dd></div>
-        <div><dt>Piątek</dt><dd>12:00 – 19:00</dd></div>
-      </dl>
-      <p class="hero-panel-note">Rejestracja telefoniczna: <a href="tel:+48324155107">32 415 51 07</a> lub <a href="tel:+48511931049">511 931 049</a></p>
-    </div>
+    <ul class="hero-badges reveal">
+      <li>Jedyny taki specjalista w&nbsp;mieście</li>
+      <li>Mikroskop zabiegowy</li>
+      <li>RTG cyfrowy na miejscu</li>
+    </ul>
+    <p class="hero-hours reveal">Przyjmujemy: pon 12–18 · śr 12–19 · pt 12–19 · ul. Ocicka 7</p>
   </div>
 </section>
 
@@ -289,12 +244,10 @@
   <div class="container stats-grid">
     <div class="stats-tooth" aria-hidden="true">
       <div class="tooth-stage">
-        <svg viewBox="0 0 200 230" class="tooth-svg">
-          <path d="M100 14 C58 14 32 42 32 78 C32 104 44 119 50 144 C56 169 60 208 76 208 C92 208 86 162 100 162 C114 162 108 208 124 208 C140 208 144 169 150 144 C156 119 168 104 168 78 C168 42 142 14 100 14 Z" fill="url(#enamel)"/>
-          <path d="M100 14 C58 14 32 42 32 78 C32 104 44 119 50 144 C56 169 60 208 76 208 C92 208 86 162 100 162 C114 162 108 208 124 208 C140 208 144 169 150 144 C156 119 168 104 168 78 C168 42 142 14 100 14 Z" fill="url(#shade)"/>
-          <ellipse cx="72" cy="62" rx="26" ry="34" fill="url(#shine)"/>
-          <path d="M64 40 C76 30 96 26 112 32" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
-        </svg>
+        <picture>
+          <source srcset="assets/tooth.webp" type="image/webp">
+          <img src="assets/tooth.png" alt="" class="tooth-img tooth-float" width="900" height="1335" loading="lazy">
+        </picture>
         <span class="tooth-shadow"></span>
       </div>
     </div>
@@ -439,6 +392,7 @@
   <div class="container footer-inner">
     <p>© <span id="year">2026</span> Szymon Frydrych – Indywidualna Praktyka Stomatologiczna, ul. Ocicka 7, 47-400 Racibórz</p>
     <p>Dentysta Racibórz · Endodonta Racibórz · Leczenie kanałowe pod mikroskopem</p>
+    <p class="footer-credit">Grafika zęba: <a href="https://www.vecteezy.com/free-png/tooth" rel="noopener">Tooth PNGs by Vecteezy</a></p>
   </div>
 </footer>
 
