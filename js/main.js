@@ -26,30 +26,6 @@ window.addEventListener(
   { passive: true }
 );
 
-const revealEls = document.querySelectorAll(".reveal");
-const groups = new Map();
-
-revealEls.forEach((el) => {
-  const parent = el.parentElement;
-  const count = groups.get(parent) || 0;
-  el.style.setProperty("--reveal-delay", `${Math.min(count * 0.09, 0.45)}s`);
-  groups.set(parent, count + 1);
-});
-
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("in");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
-);
-
-revealEls.forEach((el) => revealObserver.observe(el));
-
 function formatNumber(value) {
   return value.toLocaleString("pl-PL").replace(/,/g, " ");
 }
@@ -109,7 +85,7 @@ const journeyStops = [
   { sel: "#mikroskop", x: 0.955, y: 0.42, s: 0.34, o: 0.8 },
   { sel: "#lekarz", x: 0.945, y: 0.46, s: 0.3, o: 0.45 },
   { sel: "#faq", x: 0.11, y: 0.42, s: 0.62, o: 0.95 },
-  { sel: "#kontakt", x: 0.97, y: 0.5, s: 0.26, o: 0.45 },
+  { sel: "#kontakt", x: 0.99, y: 0.62, s: 0.2, o: 0.35 },
   { sel: ".cta-band", x: 0.78, y: 0.6, s: 0.5, o: 0.95 },
 ];
 
