@@ -15,6 +15,17 @@ nav.querySelectorAll("a").forEach((link) => {
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
+const faqItems = document.querySelectorAll("#faq details");
+faqItems.forEach((item) => {
+  item.addEventListener("toggle", () => {
+    if (item.open) {
+      faqItems.forEach((other) => {
+        if (other !== item) other.open = false;
+      });
+    }
+  });
+});
+
 const callbar = document.getElementById("callbar");
 const progressBar = document.getElementById("scrollProgress");
 let ticking = false;
