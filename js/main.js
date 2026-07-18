@@ -188,8 +188,8 @@ function frame() {
   if (journey) {
     const state = journeyState(currentY);
     if (state) {
-      const rotZ = currentY * 0.1;
-      const rotY = Math.sin(currentY * 0.0016) * 32;
+      const rotZ = Math.sin(currentY * 0.0012) * 12;
+      const rotY = Math.sin(currentY * 0.0016) * 42;
       journey.style.transform = `translate3d(${(state.x - 100).toFixed(1)}px, ${(state.y - 115).toFixed(1)}px, 0) rotate(${rotZ.toFixed(2)}deg) scale(${state.s.toFixed(3)})`;
       journey.style.opacity = state.o.toFixed(3);
       journeyInner.style.transform = `perspective(800px) rotateY(${rotY.toFixed(2)}deg)`;

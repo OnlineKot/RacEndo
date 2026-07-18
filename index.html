@@ -126,19 +126,29 @@
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <linearGradient id="enamel" x1="0" y1="0" x2="0" y2="1">
+    <linearGradient id="toothBody" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#ffffff"/>
-      <stop offset="0.55" stop-color="#eef4f6"/>
-      <stop offset="1" stop-color="#cfdfe2"/>
+      <stop offset="0.42" stop-color="#eef3f4"/>
+      <stop offset="0.66" stop-color="#dde7e9"/>
+      <stop offset="0.82" stop-color="#e2dbc9"/>
+      <stop offset="1" stop-color="#d5cbb2"/>
     </linearGradient>
-    <radialGradient id="shine" cx="0.32" cy="0.22" r="0.5">
+    <linearGradient id="toothSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0.45" stop-color="#3b5458" stop-opacity="0"/>
+      <stop offset="1" stop-color="#3b5458" stop-opacity="0.30"/>
+    </linearGradient>
+    <radialGradient id="toothLight" cx="0.30" cy="0.22" r="0.55">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="toothAO" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6b5a36" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#6b5a36" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="toothSpec" cx="0.5" cy="0.5" r="0.5">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
       <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="shade" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#0f6f6a" stop-opacity="0"/>
-      <stop offset="1" stop-color="#0f6f6a" stop-opacity="0.16"/>
-    </linearGradient>
   </defs>
 </svg>
 
@@ -146,11 +156,15 @@
 
 <div class="tooth-journey" id="toothJourney" aria-hidden="true">
   <div class="tooth-journey-inner" id="toothJourneyInner">
-    <svg viewBox="0 0 200 230" class="tooth-svg">
-      <path d="M100 14 C58 14 32 42 32 78 C32 104 44 119 50 144 C56 169 60 208 76 208 C92 208 86 162 100 162 C114 162 108 208 124 208 C140 208 144 169 150 144 C156 119 168 104 168 78 C168 42 142 14 100 14 Z" fill="url(#enamel)"/>
-      <path d="M100 14 C58 14 32 42 32 78 C32 104 44 119 50 144 C56 169 60 208 76 208 C92 208 86 162 100 162 C114 162 108 208 124 208 C140 208 144 169 150 144 C156 119 168 104 168 78 C168 42 142 14 100 14 Z" fill="url(#shade)"/>
-      <ellipse cx="72" cy="62" rx="26" ry="34" fill="url(#shine)"/>
-      <path d="M64 40 C76 30 96 26 112 32" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
+    <svg viewBox="0 0 220 240" class="tooth-svg">
+      <path d="M110 26 C88 26 70 30 58 44 C46 58 42 76 44 96 C45.5 112 52 122 56 134 C61 150 60 172 68 188 C73 198 84 200 88 190 C93 178 90 160 100 152 C106 147 114 147 120 152 C130 160 127 178 132 190 C136 200 147 198 152 188 C160 172 159 150 164 134 C168 122 174.5 112 176 96 C178 76 174 58 162 44 C150 30 132 26 110 26 Z" fill="url(#toothBody)"/>
+      <path d="M110 26 C88 26 70 30 58 44 C46 58 42 76 44 96 C45.5 112 52 122 56 134 C61 150 60 172 68 188 C73 198 84 200 88 190 C93 178 90 160 100 152 C106 147 114 147 120 152 C130 160 127 178 132 190 C136 200 147 198 152 188 C160 172 159 150 164 134 C168 122 174.5 112 176 96 C178 76 174 58 162 44 C150 30 132 26 110 26 Z" fill="url(#toothSide)"/>
+      <ellipse cx="110" cy="162" rx="26" ry="34" fill="url(#toothAO)"/>
+      <ellipse cx="74" cy="68" rx="32" ry="44" fill="url(#toothLight)"/>
+      <path d="M60 116 C84 128 136 128 160 116" stroke="#9b8c6a" stroke-opacity="0.26" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <path d="M84 50 C98 58 122 58 136 50" stroke="#7c979c" stroke-opacity="0.18" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <ellipse cx="80" cy="62" rx="14" ry="22" fill="url(#toothSpec)" transform="rotate(-18 80 62)"/>
+      <ellipse cx="99" cy="40" rx="8" ry="4" fill="#ffffff" opacity="0.75"/>
     </svg>
   </div>
 </div>
@@ -179,11 +193,6 @@
 
 <main>
 <section class="hero">
-  <div class="hero-decor" aria-hidden="true">
-    <span class="orb orb-a" data-plx="0.18"></span>
-    <span class="orb orb-b" data-plx="0.36"></span>
-    <span class="orb orb-c" data-plx="0.55"></span>
-  </div>
   <div class="container hero-grid">
     <div class="hero-copy">
       <p class="eyebrow reveal">Jedyny w&nbsp;Raciborzu specjalista stomatologii zachowawczej i&nbsp;endodoncji</p>
@@ -237,46 +246,34 @@
       <h2>Usługi stomatologiczne w&nbsp;Raciborzu</h2>
       <p>Kompleksowa opieka dla dorosłych i&nbsp;dzieci — od profilaktyki, przez ratowanie zębów, po ich odbudowę.</p>
     </div>
-    <div class="cards">
-      <article class="card reveal">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
-        </div>
+    <div class="svc-list">
+      <article class="svc reveal">
+        <span class="svc-num">01</span>
         <h3>Leczenie kanałowe pod mikroskopem</h3>
         <p>Precyzyjna endodoncja w&nbsp;wielokrotnym powiększeniu — większa skuteczność, mniejsze ryzyko powikłań i&nbsp;realna szansa na uratowanie zęba przed usunięciem.</p>
       </article>
-      <article class="card reveal">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.5 5.3 5.5.8-4 4 1 5.9-5-2.8-5 2.8 1-5.9-4-4 5.5-.8z"/></svg>
-        </div>
+      <article class="svc reveal">
+        <span class="svc-num">02</span>
         <h3>Stomatologia zachowawcza</h3>
         <p>Leczenie próchnicy i&nbsp;estetyczna odbudowa zębów nowoczesnymi materiałami — tak, aby wypełnienie było trwałe i&nbsp;niewidoczne.</p>
       </article>
-      <article class="card reveal">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-        </div>
+      <article class="svc reveal">
+        <span class="svc-num">03</span>
         <h3>Protetyka</h3>
         <p>Korony, mosty i&nbsp;uzupełnienia protetyczne przywracające pełną funkcję żucia oraz naturalny wygląd uśmiechu.</p>
       </article>
-      <article class="card reveal">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l7-7"/><path d="M13 5l6 6-8 8H5v-6z"/><path d="M15 3l6 6"/></svg>
-        </div>
+      <article class="svc reveal">
+        <span class="svc-num">04</span>
         <h3>Chirurgia stomatologiczna</h3>
         <p>Bezpieczne ekstrakcje i&nbsp;zabiegi chirurgiczne wykonywane w&nbsp;pełnym znieczuleniu, z&nbsp;dbałością o&nbsp;szybkie gojenie.</p>
       </article>
-      <article class="card reveal">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v4"/><path d="M12 16v4"/><path d="M4 12h4"/><path d="M16 12h4"/><circle cx="12" cy="12" r="3"/></svg>
-        </div>
+      <article class="svc reveal">
+        <span class="svc-num">05</span>
         <h3>Znieczulenie komputerowe</h3>
         <p>Elektronicznie kontrolowane podawanie znieczulenia eliminuje nieprzyjemne uczucie ukłucia — komfort doceniany szczególnie przez dzieci.</p>
       </article>
-      <article class="card reveal">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 18v3"/></svg>
-        </div>
+      <article class="svc reveal">
+        <span class="svc-num">06</span>
         <h3>RTG cyfrowy</h3>
         <p>Punktowe zdjęcia rentgenowskie wykonywane na miejscu — natychmiastowa diagnoza przy minimalnej dawce promieniowania.</p>
       </article>

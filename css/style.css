@@ -8,7 +8,7 @@
   --bg-alt: #f4f7f8;
   --line: #dde5e8;
   --dark: #10201f;
-  --radius: 14px;
+  --radius: 8px;
   --font-body: "Instrument Sans", system-ui, -apple-system, sans-serif;
   --font-display: "Source Serif 4", Georgia, serif;
 }
@@ -110,7 +110,7 @@ a {
 .btn {
   display: inline-block;
   padding: 0.7rem 1.4rem;
-  border-radius: 999px;
+  border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
@@ -226,15 +226,13 @@ a {
 }
 
 .hero {
-  padding: 5rem 0 4rem;
+  padding: 5.5rem 0 4.5rem;
   position: relative;
   overflow: hidden;
-  background:
-    radial-gradient(1200px 500px at 85% -10%, var(--accent-tint), transparent 60%),
-    var(--bg);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
 }
 
-.hero-decor,
 .stats-decor {
   position: absolute;
   inset: 0;
@@ -245,31 +243,6 @@ a {
   position: absolute;
   border-radius: 50%;
   will-change: transform;
-}
-
-.orb-a {
-  width: 340px;
-  height: 340px;
-  right: -90px;
-  top: -60px;
-  background: radial-gradient(circle at 35% 35%, rgba(15, 111, 106, 0.14), transparent 70%);
-}
-
-.orb-b {
-  width: 180px;
-  height: 180px;
-  right: 30%;
-  bottom: -70px;
-  background: radial-gradient(circle at 40% 40%, rgba(15, 111, 106, 0.1), transparent 70%);
-}
-
-.orb-c {
-  width: 90px;
-  height: 90px;
-  left: -30px;
-  top: 30%;
-  border: 1.5px solid rgba(15, 111, 106, 0.18);
-  background: none;
 }
 
 .orb-d {
@@ -474,49 +447,44 @@ a {
   font-size: 1.05rem;
 }
 
-.cards {
+.svc-list {
+  border-top: 1px solid var(--ink);
+}
+
+.svc {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.4rem;
+  grid-template-columns: 90px 1fr 1.1fr;
+  gap: 2rem;
+  align-items: baseline;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid var(--line);
+  transition: padding-left 0.25s ease;
 }
 
-.card {
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 1.7rem;
-  background: #fff;
-  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+.svc:hover {
+  padding-left: 0.8rem;
 }
 
-.card:hover {
-  border-color: var(--accent);
-  box-shadow: 0 10px 26px rgba(15, 111, 106, 0.1);
-  transform: translateY(-2px);
-}
-
-.card-icon {
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
-  background: var(--accent-tint);
+.svc-num {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.14em;
   color: var(--accent);
-  display: grid;
-  place-items: center;
-  margin-bottom: 1.1rem;
+  font-variant-numeric: tabular-nums;
 }
 
-.card-icon svg {
-  width: 24px;
-  height: 24px;
+.svc h3 {
+  font-size: 1.45rem;
+  transition: color 0.2s;
 }
 
-.card h3 {
-  font-size: 1.15rem;
-  margin-bottom: 0.55rem;
+.svc:hover h3 {
+  color: var(--accent);
 }
 
-.card p {
-  font-size: 0.95rem;
+.svc p {
+  font-size: 0.98rem;
   color: var(--ink-soft);
 }
 
@@ -741,17 +709,19 @@ a {
 }
 
 details {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  margin-bottom: 0.9rem;
-  overflow: hidden;
+  background: transparent;
+  border-top: 1px solid var(--line);
+}
+
+details:last-of-type {
+  border-bottom: 1px solid var(--line);
 }
 
 summary {
   cursor: pointer;
-  padding: 1.1rem 3rem 1.1rem 1.4rem;
+  padding: 1.2rem 3rem 1.2rem 0;
   font-weight: 600;
+  font-size: 1.05rem;
   list-style: none;
   position: relative;
 }
@@ -763,7 +733,7 @@ summary::-webkit-details-marker {
 summary::after {
   content: "+";
   position: absolute;
-  right: 1.3rem;
+  right: 0.4rem;
   top: 50%;
   transform: translateY(-50%);
   font-size: 1.5rem;
@@ -777,7 +747,7 @@ details[open] summary::after {
 }
 
 details p {
-  padding: 0 1.4rem 1.2rem;
+  padding: 0 3rem 1.3rem 0;
   color: var(--ink-soft);
 }
 
@@ -788,9 +758,8 @@ details p {
 }
 
 .contact-card {
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 1.7rem;
+  border-top: 2px solid var(--ink);
+  padding: 1.5rem 0 0;
 }
 
 .contact-card h3 {
@@ -929,10 +898,17 @@ details p {
     width: min(220px, 60%);
   }
 
-  .cards,
   .contact-grid,
   .trust-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .svc {
+    grid-template-columns: 56px 1fr;
+  }
+
+  .svc p {
+    grid-column: 2;
   }
 }
 
@@ -967,10 +943,14 @@ details p {
     padding: 3.4rem 0;
   }
 
-  .cards,
   .contact-grid,
   .trust-grid {
     grid-template-columns: 1fr;
+  }
+
+  .svc {
+    grid-template-columns: 44px 1fr;
+    gap: 0.6rem 1rem;
   }
 
   .footer-inner {
