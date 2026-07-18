@@ -740,6 +740,10 @@ details p {
   font-size: clamp(1.4rem, 2.6vw, 1.9rem);
 }
 
+.callbar {
+  display: none;
+}
+
 .site-footer {
   background: var(--dark);
   color: #93a5a2;
@@ -851,5 +855,40 @@ details p {
   .footer-inner {
     flex-direction: column;
     gap: 0.4rem;
+  }
+
+  .callbar {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    padding: 0.7rem 4%;
+    padding-bottom: calc(0.7rem + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid var(--line);
+    transform: translateY(110%);
+    transition: transform 0.3s ease;
+  }
+
+  .callbar.show {
+    transform: none;
+  }
+
+  .callbar-btn {
+    display: block;
+    text-align: center;
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+  }
+
+  body {
+    padding-bottom: 0;
+  }
+
+  .site-footer {
+    padding-bottom: 5.2rem;
   }
 }

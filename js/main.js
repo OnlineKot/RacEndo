@@ -17,6 +17,15 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+const callbar = document.getElementById("callbar");
+window.addEventListener(
+  "scroll",
+  () => {
+    callbar.classList.toggle("show", window.scrollY > 420);
+  },
+  { passive: true }
+);
+
 const revealEls = document.querySelectorAll(".reveal");
 const groups = new Map();
 
