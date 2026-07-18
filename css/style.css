@@ -9,8 +9,8 @@
   --line: #dbe4ee;
   --dark: #10203a;
   --radius: 16px;
-  --font-body: "Instrument Sans", system-ui, -apple-system, sans-serif;
-  --font-display: "Source Serif 4", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Manrope", system-ui, -apple-system, sans-serif;
 }
 
 * {
@@ -34,8 +34,9 @@ body {
 
 h1, h2, h3 {
   font-family: var(--font-display);
+  font-weight: 800;
   line-height: 1.15;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 a {
