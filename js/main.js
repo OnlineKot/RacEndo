@@ -26,6 +26,67 @@ faqItems.forEach((item) => {
   });
 });
 
+const CLARITY_PROJECT_ID = "";
+
+function loadClarity() {
+  if (!CLARITY_PROJECT_ID || window.clarity) return;
+  window.clarity = function () {
+    (window.clarity.q = window.clarity.q || []).push(arguments);
+  };
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.clarity.ms/tag/${CLARITY_PROJECT_ID}`;
+  document.head.appendChild(script);
+}
+
+const heroTooth = document.getElementById("heroTooth");
+const cookieBubble = document.getElementById("cookieBubble");
+const cookieText = document.getElementById("cookieText");
+const cookieActions = document.getElementById("cookieActions");
+const cookieAccept = document.getElementById("cookieAccept");
+const cookieReject = document.getElementById("cookieReject");
+const cookieInfo = document.querySelector(".cookie-info");
+
+const consentKey = "rc-cookie-consent";
+const storedConsent = localStorage.getItem(consentKey);
+
+if (storedConsent === "accepted") {
+  loadClarity();
+}
+
+function showCookie() {
+  heroTooth.classList.add("cookie-out");
+  setTimeout(() => {
+    cookieBubble.hidden = false;
+    requestAnimationFrame(() => cookieBubble.classList.add("show"));
+  }, 1500);
+}
+
+function rollBack() {
+  cookieBubble.classList.remove("show");
+  setTimeout(() => {
+    cookieBubble.hidden = true;
+    heroTooth.classList.remove("cookie-out");
+  }, 380);
+}
+
+function chooseCookies(choice) {
+  localStorage.setItem(consentKey, choice);
+  if (choice === "accepted") {
+    loadClarity();
+  }
+  cookieActions.style.display = "none";
+  if (cookieInfo) cookieInfo.style.display = "none";
+  cookieText.textContent = "Pamiętaj, aby zawsze po ciastkach umyć zęby!";
+  setTimeout(rollBack, 3400);
+}
+
+if (heroTooth && cookieBubble && !storedConsent) {
+  cookieAccept.addEventListener("click", () => chooseCookies("accepted"));
+  cookieReject.addEventListener("click", () => chooseCookies("rejected"));
+  setTimeout(showCookie, 1600);
+}
+
 const reviews = document.getElementById("reviews");
 const revPrev = document.getElementById("revPrev");
 const revNext = document.getElementById("revNext");

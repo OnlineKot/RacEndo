@@ -196,11 +196,41 @@
     </ul>
     <p class="hero-review-link"><a href="#opinie">Tysiące zadowolonych pacjentów — zobacz opinie z&nbsp;Google ★</a></p>
     <p class="hero-hours">Przyjmujemy: wt i&nbsp;czw 12–18 · śr 10–17 · pt 8–14 · ul. Ocicka 7</p>
-    <div class="hero-tooth" aria-hidden="true">
-      <picture>
+    <div class="hero-tooth" id="heroTooth">
+      <picture aria-hidden="true">
         <source srcset="assets/tooth.webp" type="image/webp">
         <img src="assets/tooth.png" alt="" class="tooth-img tooth-float" width="900" height="1335" fetchpriority="high">
       </picture>
+      <div class="cookie" id="cookie" aria-hidden="true">
+        <svg viewBox="0 0 120 120">
+          <defs>
+            <radialGradient id="cookieBody" cx="0.38" cy="0.32" r="0.85">
+              <stop offset="0" stop-color="#e8b36b"/>
+              <stop offset="0.65" stop-color="#c98940"/>
+              <stop offset="1" stop-color="#a96c2c"/>
+            </radialGradient>
+          </defs>
+          <circle cx="60" cy="60" r="56" fill="url(#cookieBody)"/>
+          <circle cx="60" cy="60" r="56" fill="none" stroke="#8a5722" stroke-width="3" stroke-dasharray="1 7" stroke-linecap="round" opacity="0.5"/>
+          <circle cx="42" cy="42" r="8" fill="#5b3a1a"/>
+          <circle cx="78" cy="38" r="6" fill="#6b4520"/>
+          <circle cx="86" cy="66" r="7" fill="#5b3a1a"/>
+          <circle cx="60" cy="82" r="8" fill="#6b4520"/>
+          <circle cx="34" cy="70" r="6" fill="#5b3a1a"/>
+          <circle cx="63" cy="58" r="5" fill="#6b4520"/>
+        </svg>
+      </div>
+      <div class="cookie-bubble" id="cookieBubble" role="dialog" aria-modal="false" aria-label="Zgoda na pliki cookie" hidden>
+        <p class="cookie-text" id="cookieText">Cześć! Mam nadzieję, że lubisz ciastka. Ta strona używa ich do anonimowych statystyk — możesz je przyjąć albo odrzucić.</p>
+        <div class="cookie-actions" id="cookieActions">
+          <button class="btn btn-primary cookie-btn" id="cookieAccept" type="button">Przyjmuję ciastka</button>
+          <button class="btn btn-ghost cookie-btn" id="cookieReject" type="button">Odrzucam</button>
+        </div>
+        <details class="cookie-info">
+          <summary>Czego używamy?</summary>
+          <p>Niezbędne: zapamiętanie Twojego wyboru. Statystyczne (opcjonalne): Microsoft Clarity — anonimowa analiza korzystania ze strony. Włączamy je tylko po Twojej zgodzie.</p>
+        </details>
+      </div>
     </div>
   </div>
 </section>

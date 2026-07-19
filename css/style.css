@@ -304,6 +304,145 @@ a {
   background: radial-gradient(ellipse at center, rgba(33, 102, 201, 0.22), transparent 70%);
 }
 
+.hero-tooth picture {
+  position: relative;
+  z-index: 2;
+  display: block;
+  transition: transform 1.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.hero-tooth.cookie-out picture {
+  transform: translateX(-32%);
+}
+
+.cookie {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  width: 46%;
+  z-index: 1;
+  transform: translateX(-50%) rotate(0deg);
+  transition: transform 1.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.cookie svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 16px rgba(90, 58, 20, 0.35));
+}
+
+.hero-tooth.cookie-out .cookie {
+  transform: translateX(92%) rotate(540deg);
+}
+
+.cookie-bubble {
+  position: absolute;
+  top: 4%;
+  left: calc(100% + 24px);
+  width: 300px;
+  z-index: 6;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1.15rem 1.2rem;
+  text-align: left;
+  box-shadow: 0 18px 40px rgba(16, 32, 58, 0.16);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.cookie-bubble::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 42px;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-left: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  transform: rotate(45deg);
+}
+
+.cookie-bubble.show {
+  opacity: 1;
+  transform: none;
+}
+
+.cookie-text {
+  font-size: 0.93rem;
+  color: var(--ink);
+  margin-bottom: 0.9rem;
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+
+.cookie-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.88rem;
+}
+
+.cookie-info {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.cookie-info[open] {
+  border: 0;
+  box-shadow: none;
+}
+
+.cookie-info summary {
+  padding: 0.1rem 0;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+.cookie-info summary::after {
+  display: none;
+}
+
+.cookie-info p {
+  padding: 0.3rem 0 0;
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .cookie-bubble {
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 10px);
+    margin-top: 1.6rem;
+    width: min(88vw, 340px);
+  }
+
+  .cookie-bubble.show {
+    transform: translate(-50%, 0);
+  }
+
+  .cookie-bubble::before {
+    left: 50%;
+    top: -8px;
+    margin-left: -8px;
+    border: 0;
+    border-left: 1px solid var(--line);
+    border-top: 1px solid var(--line);
+  }
+}
+
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.12em;
